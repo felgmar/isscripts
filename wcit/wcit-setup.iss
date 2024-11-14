@@ -6,7 +6,7 @@
 #define VersionInfoDescription "Windows CLI Installer Tool"
 
 [Setup]
-AppId={{28B11907-066D-4911-BA15-E70234360C28}
+AppId={28B11907-066D-4911-BA15-E70234360C28}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 AppVerName={#MyAppName} {#MyAppVersion}
