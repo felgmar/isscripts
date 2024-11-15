@@ -17,7 +17,7 @@ UsePreviousAppDir=no
 DefaultDirName={autopf}\{#MyUsername}\wcit
 DefaultGroupName={#MyUsername}\wcit
 AllowNoIcons=yes
-LicenseFile=C:\Users\{#MyUsername}\Nextcloud\Documents\GitHub\wcit\LICENSE
+LicenseFile=C:\Users\{#MyUsername}\Documents\GitHub\wcit\LICENSE
 PrivilegesRequiredOverridesAllowed=dialog
 OutputDir=C:\Users\{#MyUsername}\Documents\GitHub\wcit\
 OutputBaseFilename=wcit-setup
@@ -52,7 +52,7 @@ Name: "corefiles"; Description: "Required program files"; Types: full; Flags: fi
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\{#MyUsername}\Nextcloud\Documents\GitHub\wcit\build\*"; \
+Source: "C:\Users\{#MyUsername}\Documents\GitHub\wcit\build\*"; \
       DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: corefiles; MinVersion: 10.0;
 
 [Icons]
