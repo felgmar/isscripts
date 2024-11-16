@@ -2,24 +2,24 @@
 #define AppVersion "0.0.4.5"
 #define AppURL "https://github.com/mrkenhoo/wcit"
 #define AppExeName "wcit.exe"
-#define UserName "mrkenhoo"
+#define UserName "felgmar"
 #define VersionInfoDescription "Windows CLI Installer Tool"
 
 [Setup]
-AppId={28B11907-066D-4911-BA15-E70234360C28}
-AppName={#MyAppName}
-AppVersion={#MyAppVersion}
-AppVerName={#MyAppName} {#MyAppVersion}
-AppPublisherURL={#MyAppURL}
-AppSupportURL={#MyAppURL}
-AppUpdatesURL={#MyAppURL}/releases
+AppId={{28B11907-066D-4911-BA15-E70234360C28}
+AppName={#AppName}
+AppVersion={#AppVersion}
+AppVerName={#AppName} {#AppVersion}
+AppPublisherURL={#AppURL}
+AppSupportURL={#AppURL}
+AppUpdatesURL={#AppURL}/releases
 UsePreviousAppDir=no
-DefaultDirName={autopf}\{#MyUsername}\wcit
-DefaultGroupName={#MyUsername}\wcit
+DefaultDirName={autopf}\{#Username}\wcit
+DefaultGroupName={#Username}\wcit
 AllowNoIcons=yes
-LicenseFile=C:\Users\{#MyUsername}\Documents\GitHub\wcit\LICENSE
+LicenseFile=C:\Users\{#Username}\Documents\GitHub\wcit\LICENSE
 PrivilegesRequiredOverridesAllowed=dialog
-OutputDir=C:\Users\{#MyUsername}\Documents\GitHub\wcit\
+OutputDir=C:\Users\{#Username}\Documents\GitHub\wcit\
 OutputBaseFilename=wcit-setup
 Compression=lzma
 SolidCompression=yes
@@ -29,9 +29,9 @@ VersionInfoCopyright=GNU General Public License v3.0
 VersionInfoDescription={#VersionInfoDescription}
 VersionInfoOriginalFileName=wcit-setup.exe
 VersionInfoProductName=Windows CLI Installer Tool
-VersionInfoProductVersion={#MyAppVersion}
-VersionInfoProductTextVersion={#MyAppVersion}
-VersionInfoTextVersion={#MyAppVersion}
+VersionInfoProductVersion={#AppVersion}
+VersionInfoProductTextVersion={#AppVersion}
+VersionInfoTextVersion={#AppVersion}
 WizardResizable=no
 WindowResizable=no                   
 MinVersion=10.0
@@ -52,14 +52,14 @@ Name: "corefiles"; Description: "Required program files"; Types: full; Flags: fi
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\{#MyUsername}\Documents\GitHub\wcit\build\*"; \
+Source: "C:\Users\{#Username}\Documents\GitHub\wcit\build\*"; \
       DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: corefiles; MinVersion: 10.0;
 
 [Icons]
-Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
-Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
-Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
+Name: "{group}\{#AppName}"; Filename: "{app}\{#AppExeName}"
+Name: "{group}\{cm:UninstallProgram,{#AppName}}"; Filename: "{uninstallexe}"
+Name: "{autodesktop}\{#AppName}"; Filename: "{app}\{#AppExeName}"; Tasks: desktopicon
 
 [Run]
-Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\{#AppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(AppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
 
