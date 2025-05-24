@@ -1,8 +1,10 @@
 #define AppName "Windows CLI Installer Tool"
 #define AppVersion "0.0.6.3"
-#define AppURL "https://github.com/felgmar/wcit"
-#define AppExeName "wcit.exe"
 #define UserName "felgmar"
+#define AppURL "https://github.com/{#UserName}/wcit"
+#define AppExeName "wcit.exe"
+#define AppOutputDir "C:\Users\{#UserName}\Documents\GitHub\wcit"
+#define AppLicense "{#AppOutputDir}\LICENSE"
 #define VersionInfoDescription "Windows CLI Installer Tool"
 
 [Setup]
@@ -17,9 +19,9 @@ UsePreviousAppDir=no
 DefaultDirName={autopf}\{#Username}\wcit
 DefaultGroupName={#Username}\wcit
 AllowNoIcons=yes
-LicenseFile=C:\Users\{#Username}\Documents\GitHub\wcit\LICENSE
+LicenseFile={#AppLicense}
 PrivilegesRequiredOverridesAllowed=dialog
-OutputDir=C:\Users\{#Username}\Documents\GitHub\wcit\
+OutputDir={#AppOutputDir}
 OutputBaseFilename=wcit-setup
 Compression=lzma
 SolidCompression=yes
@@ -33,7 +35,7 @@ VersionInfoProductVersion={#AppVersion}
 VersionInfoProductTextVersion={#AppVersion}
 VersionInfoTextVersion={#AppVersion}
 WizardResizable=no
-WindowResizable=no                   
+WindowResizable=no
 MinVersion=10.0
 ArchitecturesAllowed=x64compatible
 
@@ -52,8 +54,8 @@ Name: "corefiles"; Description: "Required program files"; Types: full; Flags: fi
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "C:\Users\{#Username}\Documents\GitHub\wcit\build\*"; \
-      DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: corefiles; MinVersion: 10.0;
+Source: "{#AppOutputDir}\build\*"; \
+  DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: corefiles; MinVersion: 10.0;
 
 [Icons]
 Name: "{group}\{#AppName}"; Filename: "{app}\{#AppExeName}"
@@ -62,4 +64,3 @@ Name: "{autodesktop}\{#AppName}"; Filename: "{app}\{#AppExeName}"; Tasks: deskto
 
 [Run]
 Filename: "{app}\{#AppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(AppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
-
