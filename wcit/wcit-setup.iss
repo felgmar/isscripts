@@ -1,14 +1,16 @@
 #define AppName "Windows CLI Installer Tool"
 #define AppVersion "0.0.6.3"
 #define UserName "felgmar"
-#define AppURL "https://github.com/{{#UserName}/wcit"
+#define AppURL "https://github.com/" + UserName + "/wcit"
 #define AppExeName "wcit.exe"
-#define AppOutputDir "C:\Users\{{#UserName}\Documents\GitHub\wcit"
-#define AppLicense "{#AppOutputDir}\LICENSE"
+#define RepositoryDir "C:\Users\" + UserName + "\Documents\GitHub\wcit"
+#define SourceDir RepositoryDir + "\build"
+#define AppOutputDir RepositoryDir + "\build-installer"
+#define AppLicense RepositoryDir + "\LICENSE"
 #define VersionInfoDescription "Windows CLI Installer Tool"
 
 [Setup]
-AppId={{28B11907-066D-4911-BA15-E70234360C28}
+AppId={{28B11907-066D-4911-BA15-E70234360C28}}
 AppName={#AppName}
 AppVersion={#AppVersion}
 AppVerName={#AppName} {#AppVersion}
@@ -16,8 +18,8 @@ AppPublisherURL={#AppURL}
 AppSupportURL={#AppURL}
 AppUpdatesURL={#AppURL}/releases
 UsePreviousAppDir=no
-DefaultDirName={autopf}\{#Username}\wcit
-DefaultGroupName={#Username}\wcit
+DefaultDirName={autopf}\{#UserName}\wcit
+DefaultGroupName={#UserName}\wcit
 AllowNoIcons=yes
 LicenseFile={#AppLicense}
 PrivilegesRequiredOverridesAllowed=dialog
@@ -54,7 +56,7 @@ Name: "corefiles"; Description: "Required program files"; Types: full; Flags: fi
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Files]
-Source: "{#AppOutputDir}\build\*"; \
+Source: "{#RepositoryDir}\build\*"; \
   DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs; Components: corefiles; MinVersion: 10.0;
 
 [Icons]
