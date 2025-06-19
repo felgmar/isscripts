@@ -1,9 +1,9 @@
 #define AppName "Windows CLI Installer Tool"
 #define AppVersion "0.0.6.3"
 #define UserName "felgmar"
-#define AppURL "https://github.com/{#UserName}/wcit"
+#define AppURL "https://github.com/{{#UserName}/wcit"
 #define AppExeName "wcit.exe"
-#define AppOutputDir "C:\Users\{#UserName}\Documents\GitHub\wcit"
+#define AppOutputDir "C:\Users\{{#UserName}\Documents\GitHub\wcit"
 #define AppLicense "{#AppOutputDir}\LICENSE"
 #define VersionInfoDescription "Windows CLI Installer Tool"
 
