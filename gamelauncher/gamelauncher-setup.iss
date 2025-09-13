@@ -1,5 +1,5 @@
 #define AppName "Gamelauncher"
-#define AppVersion "0.0.1.0"
+#define AppVersion "1.0.0.0"
 #define UserName "felgmar"
 #define AppURL "https://github.com/" + UserName + "/gamelauncher"
 #define AppExeName "gamelauncher.exe"
