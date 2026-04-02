@@ -1,5 +1,5 @@
 #define AppName "Windows CLI Installer Tool"
-#define AppVersion "1.0.1.0"
+#define AppVersion "1.0.1.1"
 #define UserName "felgmar"
 #define AppURL "https://github.com/" + UserName + "/wcit"
 #define AppExeName "wcit.exe"
